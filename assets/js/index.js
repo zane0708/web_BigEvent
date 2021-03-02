@@ -3,6 +3,7 @@ $(function () {
     getUserInfo()
     
     var layer = layui.layer
+
     //点击按钮实现退出功能 
     $('#btnLogout').on('click', function () {
         //提示用户是否确认退出
@@ -59,12 +60,14 @@ function getUserInfo() {
     //按需 渲染用户的头像
     if (user.user_pic !== null) {
         //渲染图片头像
-        $('.layui-nav-img').attr('scr', user.user_pic).show()
+        $('.layui-nav-img').attr('src', user.user_pic).show()
         $('.text-avatar').hide()
     } else {
         //渲染文本头像
         $('.layui-nav-img').hide()
         var first = name[0].toUpperCase()
-        $('text-avatar').html(first).show()
-    }
+        $('.text-avatar').html(first).show()
+     }
+
 }
+
